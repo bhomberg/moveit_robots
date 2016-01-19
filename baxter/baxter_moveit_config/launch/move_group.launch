@@ -1,5 +1,8 @@
 <launch>
 
+  <!--<node name="dummy_joint_trajectory_controller" pkg="baxter_moveit_config" type="dummy_joint_trajectory_controller" output="log"/>-->
+
+
   <include file="$(find baxter_moveit_config)/launch/planning_context.launch" />
 
   <arg name="debug" default="false" />
@@ -34,7 +37,7 @@
     <arg name="moveit_sensor_manager" value="baxter" /> 
   </include>
 
-  <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="joint_states:=/robot/joint_states $(arg command_args)">
+  <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="log" args="joint_states:=/robot/joint_states $(arg command_args)">
     <!-- Set the display variable, in case OpenGL code is used internally -->
     <env name="DISPLAY" value="$(optenv DISPLAY :0)" />
 

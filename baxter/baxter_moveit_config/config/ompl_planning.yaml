@@ -3,6 +3,7 @@ planner_configs:
     type: geometric::SBL
   LBKPIECEkConfigDefault:
     type: geometric::LBKPIECE
+    range: 0.01
   RRTkConfigDefault:
     type: geometric::RRT
   RRTConnectkConfigDefault:
